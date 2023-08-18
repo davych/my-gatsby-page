@@ -14,7 +14,8 @@ module.exports = {
     //   }
     // },
     "gatsby-plugin-mdx",
-    "gatsby-plugin-netlify-cms"
+    "gatsby-plugin-netlify-cms",
+    "gatsby-plugin-netlify"
     // {
     //   resolve: "gatsby-plugin-netlify-cms",
     //   options: {
