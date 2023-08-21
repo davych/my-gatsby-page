@@ -14,6 +14,7 @@ module.exports = {
       }
     },
     "gatsby-plugin-mdx",
+    `gatsby-transformer-remark`,
     "gatsby-plugin-netlify-cms",
     "gatsby-plugin-netlify"
     // {
