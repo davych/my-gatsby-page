@@ -11,7 +11,7 @@ const BlogPage = ({ data }) => {
         data.allMarkdownRemark.nodes.map(node => (
           <article key={node.id}>
             <h2>
-              <Link to={`/blog/${node.frontmatter.title}`}>
+              <Link to={`/blog/${node.frontmatter.slug}`}>
                 {node.frontmatter.title}
               </Link>
             </h2>
@@ -31,6 +31,7 @@ query MyQuery {
         title
         description
         date(formatString: "MMMM D, YYYY")
+        slug
       }
       id
     }
