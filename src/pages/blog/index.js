@@ -7,36 +7,36 @@ const BlogPage = ({ data }) => {
   return (
     <Layout pageTitle="My Blog Posts">
       hi
-      {/* {
-        data.allMdx.nodes.map(node => (
+      {
+        data.allMarkdownRemark.nodes.map(node => (
           <article key={node.id}>
             <h2>
-              <Link to={`/blog/${node.frontmatter.slug}`}>
+              <Link to={`/blog/${node.frontmatter.title}`}>
                 {node.frontmatter.title}
               </Link>
             </h2>
             <p>Posted: {node.frontmatter.date}</p>
           </article>
         ))
-      } */}
+      }
     </Layout>
   )
 }
 
-// export const query = graphql`
-//   query {
-//     allMdx(sort: { frontmatter: { date: DESC }}) {
-//       nodes {
-//         frontmatter {
-//           date(formatString: "MMMM D, YYYY")
-//           title
-//           slug
-//         }
-//         id
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+query MyQuery {
+  allMarkdownRemark(sort: { frontmatter: { date: DESC }}) {
+    nodes {
+      frontmatter {
+        title
+        description
+        date(formatString: "MMMM D, YYYY")
+      }
+      id
+    }
+  }
+}
+`
 
 export const Head = () => <Seo title="My Blog Posts" />
 
